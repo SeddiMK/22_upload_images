@@ -40,6 +40,7 @@ function initializationDOM() {
   dropZone.classList.add("app__drop-zone", "drop-zone");
   dropZone.id = "dropZone";
   dropZone.textContent = "Перетащите файлы сюда или нажмите, чтобы выбрать";
+
   // drag and drop
   dropZone.addEventListener("click", () => fileInput.click());
   dropZone.addEventListener("dragover", dragOver);
@@ -116,6 +117,7 @@ window.addEventListener(
 );
 
 // События drag and drop
+
 // drop input
 function dragOver(event) {
   event.preventDefault();
@@ -377,7 +379,7 @@ function formSubmit(event, form) {
   if (form && fileList.length > 0) {
     const formData = new FormData(form);
 
-    console.table([...formData.entries()]);
+    console.table([...formData.entries()],'table');
 
     fetch("/upload", {
       method: "POST",
